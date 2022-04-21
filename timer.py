@@ -1,8 +1,7 @@
 import time
 s=time.time()
-while True:
-    print("\n"*30)
-    time_passed=round(time.time()-s)
+
+def calc_hms(time_passed):
     hours, minutes = divmod(time_passed,3600)
     minutes, seconds = divmod(minutes, 60)
     hours, minutes, seconds = str(hours), str(minutes), str(seconds)
@@ -10,8 +9,11 @@ while True:
         minutes="0"+minutes
     if len(seconds)==1:
         seconds="0"+seconds
-    i=input(f'{hours}:{minutes}:{seconds}\n')
+    return f'{hours}:{minutes}:{seconds}\n'
+while True:
+    print("\n"*30)
+    i=input(calc_hms(round(time.time()-s)))
     if i=="done":
         print("\n"*30)
-        print(f'final time: {hours}:{minutes}:{seconds}\n')
+        print("final time: " + calc_hms(round(time.time()-s)) + "\n")
         break
