@@ -1,11 +1,15 @@
 import time
 init=time.time()
-#print every 15 seconds
-total_time_limit=30
-increment=5
-fifteen=time.time()+increment
+
+inc_in_mins=1
+total_time_in_mins=30
+
+total_time_limit=total_time_in_mins*60
+increment=inc_in_mins*60
+
+interval=time.time()+increment
 while time.time()-init<total_time_limit:
-    time_to_go=fifteen-time.time()
+    time_to_go=interval-time.time()
     time.sleep(time_to_go)
-    print(round(time.time()-init))
-    fifteen+=increment
+    print(f'{round((time.time()-init)/60)} minutes')
+    interval+=increment
