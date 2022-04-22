@@ -8,7 +8,7 @@ total_time_limit=total_time_in_mins*60
 increment=inc_in_mins*60
 
 interval=time.time()+increment
-print(f'Starting timer for {total_time_limit} minutes.')
+print(f'Starting timer for {total_time_in_mins} minutes.')
 while time.time()-init<total_time_limit:
     time_to_go=interval-time.time()
     time.sleep(time_to_go)
