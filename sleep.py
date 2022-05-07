@@ -1,3 +1,4 @@
+#prints time whenever use types anything
 import time
 init=time.time()
 
